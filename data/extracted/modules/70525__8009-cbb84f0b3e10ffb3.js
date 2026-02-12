@@ -1,0 +1,1 @@
+function(e,t,s){"use strict";s.d(t,{b:function(){return l}});let n=e=>e.replace(/^\/+|\/+$/g,"");function l(e,t){e=n(e),t=n(t);let s=e.match(/^(https?:\/\/)/);if(!s)return(e?"/".concat(e):"")+"".concat(t?"/".concat(t):"");{let l=s[0];return e=n(e=e.slice(l.length)),t=n(t),"".concat(l).concat(e).concat(t?"/".concat(t):"")}}}

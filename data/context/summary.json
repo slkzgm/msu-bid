@@ -1,0 +1,77 @@
+{
+  "fetchedAt": "2026-02-12T23:16:20.335Z",
+  "contractListCount": 26,
+  "frontendAddressMapCount": 101,
+  "detailFetchedCount": 26,
+  "detailMissingCount": 1,
+  "abiCount": 26,
+  "sourceContractCount": 26,
+  "onchainCodeAddressCount": 80,
+  "onchainNoCodeAddressCount": 9,
+  "importantContracts": [
+    {
+      "key": "Marketplace",
+      "address": "0xf1c82c082af3de3614771105f01dc419c3163352",
+      "detailOk": true,
+      "detailStatus": "VERIFIED",
+      "hasCode": true,
+      "bytecodeSize": 13415
+    },
+    {
+      "key": "MarketplaceV2",
+      "address": "0x6813869c3e5dec06e6f88b42d41487dc5d7abf57",
+      "detailOk": false,
+      "detailStatus": "NOT_AVAILABLE",
+      "hasCode": true,
+      "bytecodeSize": 14626
+    },
+    {
+      "key": "OrderBook",
+      "address": "0xdf6d3658335a6608c8c76470b53250add03bcc77",
+      "detailOk": true,
+      "detailStatus": "VERIFIED",
+      "hasCode": true,
+      "bytecodeSize": 12198
+    },
+    {
+      "key": "NextMeso",
+      "address": "0x07e49ad54fcd23f6e7b911c2068f0148d1827c08",
+      "detailOk": true,
+      "detailStatus": "VERIFIED",
+      "hasCode": true,
+      "bytecodeSize": 8118
+    },
+    {
+      "key": "Commission",
+      "address": "0xcde2de9d407e0a7d07da78ca96184333d9fdc602",
+      "detailOk": true,
+      "detailStatus": "VERIFIED",
+      "hasCode": true,
+      "bytecodeSize": 5688
+    },
+    {
+      "key": "MaplestoryEquip",
+      "address": "0x43dcff2a0cedcd5e10e6f1c18b503498ddce60d5",
+      "detailOk": true,
+      "detailStatus": "VERIFIED",
+      "hasCode": true,
+      "bytecodeSize": 14006
+    },
+    {
+      "key": "MaplestoryCharacter",
+      "address": "0xce8e48fae05c093a4a1a1f569bdb53313d765937",
+      "detailOk": true,
+      "detailStatus": "VERIFIED",
+      "hasCode": true,
+      "bytecodeSize": 13896
+    },
+    {
+      "key": "MaplestoryConsume",
+      "address": "0x3413d3b37a05e3c20c8fb93f54d55539966a9997",
+      "detailOk": true,
+      "detailStatus": "VERIFIED",
+      "hasCode": true,
+      "bytecodeSize": 17420
+    }
+  ]
+}

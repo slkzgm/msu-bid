@@ -1,0 +1,1742 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "blockhashStore",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "internalBalance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "externalBalance",
+        "type": "uint256"
+      }
+    ],
+    "type": "error",
+    "name": "BalanceInvariantViolated"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "blockNum",
+        "type": "uint256"
+      }
+    ],
+    "type": "error",
+    "name": "BlockhashNotInStore"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "coordinatorAddress",
+        "type": "address"
+      }
+    ],
+    "type": "error",
+    "name": "CoordinatorAlreadyRegistered"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "coordinatorAddress",
+        "type": "address"
+      }
+    ],
+    "type": "error",
+    "name": "CoordinatorNotRegistered"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "FailedToSendNative"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "FailedToTransferLink"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "have",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "want",
+        "type": "uint32"
+      }
+    ],
+    "type": "error",
+    "name": "GasLimitTooBig"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "gasPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxGas",
+        "type": "uint256"
+      }
+    ],
+    "type": "error",
+    "name": "GasPriceExceeded"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "IncorrectCommitment"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "IndexOutOfRange"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "InsufficientBalance"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "InvalidCalldata"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "consumer",
+        "type": "address"
+      }
+    ],
+    "type": "error",
+    "name": "InvalidConsumer"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "InvalidExtraArgsTag"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int256",
+        "name": "linkWei",
+        "type": "int256"
+      }
+    ],
+    "type": "error",
+    "name": "InvalidLinkWeiPrice"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "premiumPercentage",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "max",
+        "type": "uint8"
+      }
+    ],
+    "type": "error",
+    "name": "InvalidPremiumPercentage"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "have",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint16",
+        "name": "min",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint16",
+        "name": "max",
+        "type": "uint16"
+      }
+    ],
+    "type": "error",
+    "name": "InvalidRequestConfirmations"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "InvalidSubscription"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "LinkAlreadySet"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "flatFeeLinkDiscountPPM",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "flatFeeNativePPM",
+        "type": "uint32"
+      }
+    ],
+    "type": "error",
+    "name": "LinkDiscountTooHigh"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "LinkNotSet"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "have",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "max",
+        "type": "uint32"
+      }
+    ],
+    "type": "error",
+    "name": "MsgDataTooBig"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "proposedOwner",
+        "type": "address"
+      }
+    ],
+    "type": "error",
+    "name": "MustBeRequestedOwner"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "type": "error",
+    "name": "MustBeSubOwner"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "NoCorrespondingRequest"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "keyHash",
+        "type": "bytes32"
+      }
+    ],
+    "type": "error",
+    "name": "NoSuchProvingKey"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "have",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "want",
+        "type": "uint32"
+      }
+    ],
+    "type": "error",
+    "name": "NumWordsTooBig"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "OnlyCallableFromLink"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "PaymentTooLarge"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "PendingRequestExists"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "keyHash",
+        "type": "bytes32"
+      }
+    ],
+    "type": "error",
+    "name": "ProvingKeyAlreadyRegistered"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "Reentrant"
+  },
+  {
+    "inputs": [],
+    "type": "error",
+    "name": "TooManyConsumers"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "minimumRequestConfirmations",
+        "type": "uint16",
+        "indexed": false
+      },
+      {
+        "internalType": "uint32",
+        "name": "maxGasLimit",
+        "type": "uint32",
+        "indexed": false
+      },
+      {
+        "internalType": "uint32",
+        "name": "stalenessSeconds",
+        "type": "uint32",
+        "indexed": false
+      },
+      {
+        "internalType": "uint32",
+        "name": "gasAfterPaymentCalculation",
+        "type": "uint32",
+        "indexed": false
+      },
+      {
+        "internalType": "int256",
+        "name": "fallbackWeiPerUnitLink",
+        "type": "int256",
+        "indexed": false
+      },
+      {
+        "internalType": "uint32",
+        "name": "fulfillmentFlatFeeNativePPM",
+        "type": "uint32",
+        "indexed": false
+      },
+      {
+        "internalType": "uint32",
+        "name": "fulfillmentFlatFeeLinkDiscountPPM",
+        "type": "uint32",
+        "indexed": false
+      },
+      {
+        "internalType": "uint8",
+        "name": "nativePremiumPercentage",
+        "type": "uint8",
+        "indexed": false
+      },
+      {
+        "internalType": "uint8",
+        "name": "linkPremiumPercentage",
+        "type": "uint8",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "ConfigSet",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "coordinatorAddress",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "CoordinatorDeregistered",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "coordinatorAddress",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "CoordinatorRegistered",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "internalType": "int256",
+        "name": "fallbackWeiPerUnitLink",
+        "type": "int256",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "FallbackWeiPerUnitLinkUsed",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "FundsRecovered",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "fee",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "L1GasFee",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newCoordinator",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "MigrationCompleted",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "NativeFundsRecovered",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+        "indexed": true
+      }
+    ],
+    "type": "event",
+    "name": "OwnershipTransferRequested",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+        "indexed": true
+      }
+    ],
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "keyHash",
+        "type": "bytes32",
+        "indexed": false
+      },
+      {
+        "internalType": "uint64",
+        "name": "maxGas",
+        "type": "uint64",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "ProvingKeyDeregistered",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "keyHash",
+        "type": "bytes32",
+        "indexed": false
+      },
+      {
+        "internalType": "uint64",
+        "name": "maxGas",
+        "type": "uint64",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "ProvingKeyRegistered",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "uint256",
+        "name": "outputSeed",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "uint96",
+        "name": "payment",
+        "type": "uint96",
+        "indexed": false
+      },
+      {
+        "internalType": "bool",
+        "name": "nativePayment",
+        "type": "bool",
+        "indexed": false
+      },
+      {
+        "internalType": "bool",
+        "name": "success",
+        "type": "bool",
+        "indexed": false
+      },
+      {
+        "internalType": "bool",
+        "name": "onlyPremium",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "RandomWordsFulfilled",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "keyHash",
+        "type": "bytes32",
+        "indexed": true
+      },
+      {
+        "internalType": "uint256",
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "preSeed",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "uint16",
+        "name": "minimumRequestConfirmations",
+        "type": "uint16",
+        "indexed": false
+      },
+      {
+        "internalType": "uint32",
+        "name": "callbackGasLimit",
+        "type": "uint32",
+        "indexed": false
+      },
+      {
+        "internalType": "uint32",
+        "name": "numWords",
+        "type": "uint32",
+        "indexed": false
+      },
+      {
+        "internalType": "bytes",
+        "name": "extraArgs",
+        "type": "bytes",
+        "indexed": false
+      },
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address",
+        "indexed": true
+      }
+    ],
+    "type": "event",
+    "name": "RandomWordsRequested",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountLink",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountNative",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "SubscriptionCanceled",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "address",
+        "name": "consumer",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "SubscriptionConsumerAdded",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "address",
+        "name": "consumer",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "SubscriptionConsumerRemoved",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "SubscriptionCreated",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "uint256",
+        "name": "oldBalance",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "newBalance",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "SubscriptionFunded",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "uint256",
+        "name": "oldNativeBalance",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "internalType": "uint256",
+        "name": "newNativeBalance",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "SubscriptionFundedWithNative",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "SubscriptionOwnerTransferRequested",
+    "anonymous": false
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "type": "event",
+    "name": "SubscriptionOwnerTransferred",
+    "anonymous": false
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "BLOCKHASH_STORE",
+    "outputs": [
+      {
+        "internalType": "contract BlockhashStoreInterface",
+        "name": "",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "LINK",
+    "outputs": [
+      {
+        "internalType": "contract LinkTokenInterface",
+        "name": "",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "LINK_NATIVE_FEED",
+    "outputs": [
+      {
+        "internalType": "contract AggregatorV3Interface",
+        "name": "",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "MAX_CONSUMERS",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "MAX_NUM_WORDS",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "MAX_REQUEST_CONFIRMATIONS",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "acceptOwnership"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "acceptSubscriptionOwnerTransfer"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "consumer",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "addConsumer"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "cancelSubscription"
+  },
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "createSubscription",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "deregisterMigratableCoordinator"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[2]",
+        "name": "publicProvingKey",
+        "type": "uint256[2]"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "deregisterProvingKey"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "struct VRF.Proof",
+        "name": "proof",
+        "type": "tuple",
+        "components": [
+          {
+            "internalType": "uint256[2]",
+            "name": "pk",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "uint256[2]",
+            "name": "gamma",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "c",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "s",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "seed",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "uWitness",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256[2]",
+            "name": "cGammaWitness",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "uint256[2]",
+            "name": "sHashWitness",
+            "type": "uint256[2]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "zInv",
+            "type": "uint256"
+          }
+        ]
+      },
+      {
+        "internalType": "struct VRFTypes.RequestCommitmentV2Plus",
+        "name": "rc",
+        "type": "tuple",
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "blockNum",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "subId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "callbackGasLimit",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "numWords",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sender",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes",
+            "name": "extraArgs",
+            "type": "bytes"
+          }
+        ]
+      },
+      {
+        "internalType": "bool",
+        "name": "onlyPremium",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "fulfillRandomWords",
+    "outputs": [
+      {
+        "internalType": "uint96",
+        "name": "payment",
+        "type": "uint96"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function",
+    "name": "fundSubscriptionWithNative"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "startIndex",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxCount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "getActiveSubscriptionIds",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "ids",
+        "type": "uint256[]"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "getSubscription",
+    "outputs": [
+      {
+        "internalType": "uint96",
+        "name": "balance",
+        "type": "uint96"
+      },
+      {
+        "internalType": "uint96",
+        "name": "nativeBalance",
+        "type": "uint96"
+      },
+      {
+        "internalType": "uint64",
+        "name": "reqCount",
+        "type": "uint64"
+      },
+      {
+        "internalType": "address",
+        "name": "subOwner",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "consumers",
+        "type": "address[]"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[2]",
+        "name": "publicKey",
+        "type": "uint256[2]"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function",
+    "name": "hashOfKey",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "newCoordinator",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "migrate"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "onTokenTransfer"
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "ownerCancelSubscription"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "pendingRequestExists",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "recoverFunds"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "recoverNativeFunds"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "registerMigratableCoordinator"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[2]",
+        "name": "publicProvingKey",
+        "type": "uint256[2]"
+      },
+      {
+        "internalType": "uint64",
+        "name": "maxGas",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "registerProvingKey"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "consumer",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "removeConsumer"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "struct VRFV2PlusClient.RandomWordsRequest",
+        "name": "req",
+        "type": "tuple",
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "keyHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "subId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint16",
+            "name": "requestConfirmations",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint32",
+            "name": "callbackGasLimit",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "numWords",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "extraArgs",
+            "type": "bytes"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "requestRandomWords",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "requestId",
+        "type": "uint256"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "subId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "requestSubscriptionOwnerTransfer"
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "s_config",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "minimumRequestConfirmations",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "maxGasLimit",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bool",
+        "name": "reentrancyLock",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint32",
+        "name": "stalenessSeconds",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "gasAfterPaymentCalculation",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "fulfillmentFlatFeeNativePPM",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "fulfillmentFlatFeeLinkDiscountPPM",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint8",
+        "name": "nativePremiumPercentage",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "linkPremiumPercentage",
+        "type": "uint8"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "s_currentSubNonce",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "s_fallbackWeiPerUnitLink",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "s_provingKeyHashes",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "s_provingKeys",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "exists",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint64",
+        "name": "maxGas",
+        "type": "uint64"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "s_requestCommitments",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "s_totalBalance",
+    "outputs": [
+      {
+        "internalType": "uint96",
+        "name": "",
+        "type": "uint96"
+      }
+    ]
+  },
+  {
+    "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
+    "name": "s_totalNativeBalance",
+    "outputs": [
+      {
+        "internalType": "uint96",
+        "name": "",
+        "type": "uint96"
+      }
+    ]
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "minimumRequestConfirmations",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "maxGasLimit",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "stalenessSeconds",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "gasAfterPaymentCalculation",
+        "type": "uint32"
+      },
+      {
+        "internalType": "int256",
+        "name": "fallbackWeiPerUnitLink",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "fulfillmentFlatFeeNativePPM",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "fulfillmentFlatFeeLinkDiscountPPM",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint8",
+        "name": "nativePremiumPercentage",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "linkPremiumPercentage",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "setConfig"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "link",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "linkNativeFeed",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "setLINKAndLINKNativeFeed"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "transferOwnership"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "withdraw"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "recipient",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "withdrawNative"
+  }
+]

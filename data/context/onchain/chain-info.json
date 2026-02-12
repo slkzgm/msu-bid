@@ -1,0 +1,8 @@
+{
+  "rpcUrl": "https://henesys-rpc.msu.io",
+  "chainIdHex": "0x10b3e",
+  "blockNumberHex": "0xa9d662",
+  "netVersion": "68414",
+  "clientVersion": "v0.8.0@44b20d219471a0e08bd163b7466e3d8620ff45f2",
+  "checkedAt": "2026-02-12T23:16:20.306Z"
+}

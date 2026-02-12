@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";r.d(t,{x:function(){return a}});var n=r(15467),i=r(58135),o=r(51897);async function a(e,t){let r;let{account:a,connector:s,...u}=t;return r="object"==typeof a&&"local"===a.type?e.getClient():await (0,o.e)(e,{account:a,connector:s}),(0,i.s)(r,n.x,"signTypedData")({...u,...a?{account:a}:{}})}}

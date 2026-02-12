@@ -1,0 +1,1 @@
+function(e,t,s){"use strict";s.d(t,{BU:function(){return v},E9:function(){return h},Pm:function(){return d}});var n=s(23122),l=s(82294),o=s(68900),a=s(84042),r=s(4150),i=s(83380);let d={DEV:n.a,QA:l.f,TEST:o.N,STAGE:a.y,LIVE:r.v}[i.Gm];if(!d)throw Error("NX_CHAIN contract address is empty!!!!");d.nativeCurrency.decimals,d.nativeCurrency.symbol;let h=d.nativeCurrency.decimals,v=5}

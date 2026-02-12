@@ -1,0 +1,231 @@
+{
+  "FBI": {
+    "OBJ": {
+      "BAVGCT": "2.1",
+      "LBNO": "11130382",
+      "RBLIST": [
+        {
+          "BNO": "11130382",
+          "TRXCNT": "3"
+        },
+        {
+          "BNO": "11130381",
+          "TRXCNT": "1"
+        },
+        {
+          "BNO": "11130380",
+          "TRXCNT": "1"
+        },
+        {
+          "BNO": "11130379",
+          "TRXCNT": "4"
+        },
+        {
+          "BNO": "11130378",
+          "TRXCNT": "2"
+        },
+        {
+          "BNO": "11130377",
+          "TRXCNT": "4"
+        },
+        {
+          "BNO": "11130376",
+          "TRXCNT": "6"
+        },
+        {
+          "BNO": "11130375",
+          "TRXCNT": "5"
+        },
+        {
+          "BNO": "11130374",
+          "TRXCNT": "2"
+        },
+        {
+          "BNO": "11130373",
+          "TRXCNT": "2"
+        }
+      ]
+    },
+    "EN": true
+  },
+  "FGI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FBFI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FTVI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FNTI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FNTTCNTI": {
+    "OBJ": {
+      "TRXTP": "NORMAL",
+      "TTRXCNT": "138789830"
+    },
+    "EN": true
+  },
+  "FITI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FITTCNTI": {
+    "OBJ": {
+      "TRXTP": "INTERNAL",
+      "TTRXCNT": "225446345"
+    },
+    "EN": true
+  },
+  "FPTI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FPTTCNTI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FTI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FTCI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FTDI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FDACI": {
+    "OBJ": null,
+    "EN": false
+  },
+  "FAI": {
+    "OBJ": {
+      "TACNT": "4618479",
+      "TEOACNT": "3804246",
+      "TEOAPR": "82",
+      "TCACNT": "814233",
+      "TCAPR": "18"
+    },
+    "EN": true
+  },
+  "FBAI": {
+    "OBJ": {
+      "TBL": "1000000000",
+      "BLLIST": [
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0xeec5d35e12e5d78cf724350978754b65ae255c33",
+            "NN": "",
+            "SB": ""
+          },
+          "BL": "720998984",
+          "BLP": "72.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0x59211b32ac0bfc2cdd67ee1cb89979d2d33e74c8",
+            "NN": "",
+            "SB": ""
+          },
+          "BL": "109999832.079664903964037267",
+          "BLP": "11.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0xa5489f2739bd8e447f768edefab032dd8466b428",
+            "NN": "",
+            "SB": ""
+          },
+          "BL": "66609579.431720849815324849",
+          "BLP": "7.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0x9f98cfa105f04ad42fa517d63bbeed4ff892554f",
+            "NN": "",
+            "SB": ""
+          },
+          "BL": "20000000",
+          "BLP": "2.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0x07e49ad54fcd23f6e7b911c2068f0148d1827c08",
+            "NN": "NextMeso",
+            "SB": "NESO"
+          },
+          "BL": "18441115.156822067106436622",
+          "BLP": "2.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0x79a3a495135e3d617d74bb8d960ef026b1810737",
+            "NN": "CreatorWallet",
+            "SB": ""
+          },
+          "BL": "16593807.333393939890647014",
+          "BLP": "2.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0x40328f0fe525230666a04fcac1f512f2b6f08efa",
+            "NN": "",
+            "SB": ""
+          },
+          "BL": "12792088.986543488254499838",
+          "BLP": "1.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0x5a959a0f0897e3922b75dd4b7c81f9fa829d1528",
+            "NN": "",
+            "SB": ""
+          },
+          "BL": "9000000",
+          "BLP": "1.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "CA",
+            "ADDR": "0xda24fef18739a118e0be6519ec83aca71c977b34",
+            "NN": "",
+            "SB": ""
+          },
+          "BL": "6960000",
+          "BLP": "1.000"
+        },
+        {
+          "ADDR": {
+            "ADT": "EOA",
+            "ADDR": "Others",
+            "NN": "Others",
+            "SB": ""
+          },
+          "BL": "18604593.03129325096905441",
+          "BLP": "2.000"
+        }
+      ]
+    },
+    "EN": true
+  },
+  "FACI": {
+    "OBJ": null,
+    "EN": false
+  }
+}

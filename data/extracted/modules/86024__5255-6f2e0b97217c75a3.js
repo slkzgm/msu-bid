@@ -1,0 +1,1 @@
+function(e,t,r){"use strict";r.d(t,{HE:function(){return o},WZ:function(){return s}});var n=r(60815);let i={config:null},o=(0,n.c)(e=>({...i,set:t=>e(e=>({...e,...t})),reset:()=>e({...i})})),a={get:()=>o.getState(),subscribe:o.subscribe};function s(){let e=a.get();if(!e.config)throw Error("No wagmi config found. Ensure you have set up a wagmi config");return e.config}}

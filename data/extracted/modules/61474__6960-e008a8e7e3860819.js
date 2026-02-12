@@ -1,0 +1,1 @@
+function(e,t,i){"use strict";Object.defineProperty(t,"$",{enumerable:!0,get:function(){return r}});let s=i(6431);function r(e){let{createServerReference:t}=i(6671);return t(e,s.callServer)}}
